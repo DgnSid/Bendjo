@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Réseaux Sociaux</title>
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+        }
+
+        .title {
+            font-size: 28px;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .btn {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: white;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+
+        .btn-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Couleurs spécifiques pour chaque réseau */
+        .btn-fb {
+            background: #1877F2; /* Facebook */
+        }
+
+        .btn-tt {
+            background: #000000; /* TikTok */
+        }
+
+        .btn-wa {
+            background: #25D366; /* WhatsApp */
+        }
+
+        .btn-ig {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); /* Instagram */
+        }
+
+        .btn-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover .btn-icon {
+            transform: scale(1.1);
+        }
+
+        .btn-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .btn-desc {
+            font-size: 14px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.4;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* Animation au chargement */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .btn {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .btn:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .btn:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .btn:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .btn:nth-child(4) {
+            animation-delay: 0.5s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                height: 150px;
+            }
+            
+            .logo {
+                max-width: 150px;
+            }
+            
+            .title {
+                font-size: 24px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <!-- Remplacez "logo.png" par le chemin de votre logo -->
+        <img src="https://zupimages.net/up/25/30/kohj.png" alt="Logo Bendjo" class="logo">
+        <h1 class="title">Rejoignez-nous sur les réseaux</h1>
+        <p class="subtitle">Suivez notre actualité et contactez-nous via nos différents canaux</p>
+    </div>
+
+    <div class="container">
+        <a href="https://www.facebook.com/share/1AtjoZuNFr/" class="btn btn-fb" target="_blank">
+            <div class="btn-content">
+                <div class="btn-icon"><i class="fab fa-facebook-f"></i></div>
+                <div class="btn-title">Facebook</div>
+                <div class="btn-desc">Suivez-nous sur Facebook</div>
+            </div>
+        </a>
+        
+        <a href="https://www.tiktok.com/@bendjo229?_t=ZM-8yKUkATw8Aw&_r=1" class="btn btn-tt" target="_blank">
+            <div class="btn-content">
+                <div class="btn-icon"><i class="fab fa-tiktok"></i></div>
+                <div class="btn-title">TikTok</div>
+                <div class="btn-desc">Découvrez nos vidéos</div>
+            </div>
+        </a>
+        
+        <a href="https://whatsapp.com/channel/0029Vb70l2AGU3BRkvLBNO07" class="btn btn-wa" target="_blank">
+            <div class="btn-content">
+                <div class="btn-icon"><i class="fab fa-whatsapp"></i></div>
+                <div class="btn-title">WhatsApp</div>
+                <div class="btn-desc">Suivez notre chaine wathsapp</div>
+            </div>
+        </a>
+        
+        <a href="https://www.instagram.com/bendjo229?igsh=YzljYTk1ODg3Zg==" class="btn btn-ig" target="_blank">
+            <div class="btn-content">
+                <div class="btn-icon"><i class="fab fa-instagram"></i></div>
+                <div class="btn-title">Instagram</div>
+                <div class="btn-desc">Voir nos photos et stories</div>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        // Effet de clic amélioré
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Animation de clic
+                e.preventDefault();
+                this.style.transform = 'scale(0.95)';
+                
+                // Ouverture dans un nouvel onglet
+                setTimeout(() => {
+                    window.open(this.getAttribute('href'), '_blank');
+                    this.style.transform = '';
+                }, 200);
+            });
+            
+            // Effet de survol dynamique
+            btn.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.btn-icon');
+                icon.style.transform = 'rotate(5deg) scale(1.1)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.btn-icon');
+                icon.style.transform = '';
+            });
+        });
+
+        // Effet de vague au survol
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const wave = document.createElement('div');
+                wave.style.position = 'absolute';
+                wave.style.width = '200px';
+                wave.style.height = '200px';
+                wave.style.background = 'rgba(255,255,255,0.4)';
+                wave.style.borderRadius = '50%';
+                wave.style.top = (y - 100) + 'px';
+                wave.style.left = (x - 100) + 'px';
+                wave.style.transform = 'scale(0)';
+                wave.style.transition = 'transform 0.6s ease-out, opacity 0.6s ease-out';
+                wave.style.opacity = '1';
+                wave.style.zIndex = '1';
+                
+                this.appendChild(wave);
+                
+                setTimeout(() => {
+                    wave.style.transform = 'scale(3)';
+                    wave.style.opacity = '0';
+                }, 10);
+                
+                setTimeout(() => {
+                    if (wave.parentNode === this) {
+                        wave.remove();
+                    }
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
